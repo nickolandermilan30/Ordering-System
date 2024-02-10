@@ -1,0 +1,23 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Rounded Rectangle Shape -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Set the fill color of the shape (background) to white -->
+            <solid android:color="@color/purple_dark" />
+
+            <!-- Set the corner radius for rounded corners -->
+            <corners
+                android:bottomRightRadius="50dp"
+                android:bottomLeftRadius="50dp"
+                android:topRightRadius="50dp"
+                android:topLeftRadius="50dp" />
+
+            <!-- Set the stroke (border) properties -->
+            <stroke
+                android:width="2dp"
+                android:color="@color/purple_dark" />
+        </shape>
+    </item>
+
+
+</layer-list>

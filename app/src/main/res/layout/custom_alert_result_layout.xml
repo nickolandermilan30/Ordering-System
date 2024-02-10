@@ -1,0 +1,28 @@
+<!-- res/layout/custom_alert_result_layout.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="202dp"
+        android:layout_height="67dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:fontFamily="@font/balsamiq_sans"
+        android:text=""
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnOKResult"
+        android:layout_width="164dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/purple"
+        android:layout_height="wrap_content"
+        android:text="OK" />
+
+</LinearLayout>

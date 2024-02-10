@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Drawable for when the button is pressed -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="#FF0000" /> <!-- Piliin ang kulay na gusto mo -->
+        </shape>
+    </item>
+
+    <!-- Default Drawable -->
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="#9C27B0" /> <!-- Piliin ang kulay na gusto mo -->
+                </shape>
+            </item>
+            <!-- Ang arrow sa loob ng bilog -->
+            <item android:width="12dp" android:height="12dp" android:gravity="center">
+                <rotate android:fromDegrees="45">
+                    <shape android:shape="rectangle">
+                       </shape>
+                </rotate>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>

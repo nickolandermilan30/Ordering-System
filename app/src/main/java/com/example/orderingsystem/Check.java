@@ -70,23 +70,6 @@ public class Check extends AppCompatActivity {
                 // Retrieve the selected order name
                 String orderName = orderNamesList.get(position);
 
-                // Retrieve data from the extras
-                Bundle extras = getIntent().getExtras();
-                if (extras != null) {
-                    String name = extras.getString("name");
-                    int tableNumber = extras.getInt("tableNumber");
-                    ArrayList<FoodItem> itemList = extras.getParcelableArrayList("itemList");
-                    double totalBill = extras.getDouble("totalBill");
-
-                    // Pass the necessary data to the OrderList activity
-                    Intent intent = new Intent(Check.this, OrderList.class);
-                    intent.putExtra("name", name);
-                    intent.putExtra("tableNumber", tableNumber);
-                    intent.putParcelableArrayListExtra("itemList", itemList);
-                    intent.putExtra("totalBill", totalBill);
-                    intent.putExtra("orderName", orderName); // Pass the selected order name
-                    startActivity(intent);
-                }
             }
         });
 

@@ -98,95 +98,38 @@ public class Check extends AppCompatActivity {
         Intent intent;
 
         switch (foodName) {
-
             case "Tianshu Meat":
-                intent = new Intent(Check.this, LandingPage.class);
-                startActivity(intent);
-                break;
-
             case "Sashimi Platter":
                 intent = new Intent(Check.this, LandingPage.class);
-                startActivity(intent);
                 break;
-
-
-
-
             case "Tandoori Roast Chicken":
-                intent = new Intent(Check.this, Shop.class);
-                startActivity(intent);
-                break;
-
             case "Bountiful Year":
-                intent = new Intent(Check.this, Shop.class);
-                startActivity(intent);
-                break;
-
-            // Dagdagan ng iba pang mga pangalan ng pagkain at mga activity kung kinakailangan
             case "Butter Crab":
+            case "Jade Parcels":
                 intent = new Intent(Check.this, Shop.class);
-                startActivity(intent);
                 break;
-
-            case "Jade Parcel":
-                intent = new Intent(Check.this, Shop.class);
-                startActivity(intent);
-                break;
-
-
-
-
-
             case "Dango Milk":
-                intent = new Intent(Check.this, Drinks.class);
-                startActivity(intent);
-                break;
-
             case "Fruits of the Festival":
-                intent = new Intent(Check.this, Drinks.class);
-                startActivity(intent);
-                break;
-
-            // Dagdagan ng iba pang mga pangalan ng pagkain at mga activity kung kinakailangan
             case "Padisarah Pudding":
-                intent = new Intent(Check.this, Drinks.class);
-                startActivity(intent);
-                break;
-
             case "Apple Cider":
                 intent = new Intent(Check.this, Drinks.class);
-                startActivity(intent);
                 break;
-
-
-
-
             case "La Lettre a Focalors":
-                intent = new Intent(Check.this, Dessert.class);
-                startActivity(intent);
-                break;
-
             case "Coffee Bavarois":
-                intent = new Intent(Check.this, Dessert.class);
-                startActivity(intent);
-                break;
-
-            // Dagdagan ng iba pang mga pangalan ng pagkain at mga activity kung kinakailangan
             case "Taiyaki":
-                intent = new Intent(Check.this, Dessert.class);
-                startActivity(intent);
-                break;
-
             case "Tricolor Dango":
                 intent = new Intent(Check.this, Dessert.class);
-                startActivity(intent);
                 break;
-
             default:
-                // Kung wala sa itaas na mga kundisyon, maaaring gawin ang default na action dito.
-                break;
+                // Default action, if needed
+                return;
         }
+
+        // Add search query as extra to intent
+        intent.putExtra("searchQuery", foodName);
+        startActivity(intent);
     }
+
 
 
 }

@@ -16,6 +16,9 @@ import java.util.ArrayList;
 
 public class ResActivity extends AppCompatActivity {
 
+    private String name; // Declare as a class-level field
+    private double totalBill; // Declare as a class-level field
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +37,10 @@ public class ResActivity extends AppCompatActivity {
         // Retrieve data passed from Fav activity
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String name = extras.getString("name");
+            name = extras.getString("name"); // Assign value to class-level field
             int tableNumber = extras.getInt("tableNumber");
             ArrayList<FoodItem> itemList = extras.getParcelableArrayList("itemList");
-            double totalBill = extras.getDouble("totalBill");
+            totalBill = extras.getDouble("totalBill"); // Assign value to class-level field
 
             // Update UI with the retrieved data
             updateUI(name, tableNumber, itemList, totalBill);
@@ -71,10 +74,15 @@ public class ResActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Close the dialogue
                 dialog.dismiss();
+
+                // Pass data to Check activity
                 Intent checkIntent = new Intent(ResActivity.this, Check.class);
+                checkIntent.putExtra("name", name);
+                checkIntent.putExtra("totalBill", totalBill);
                 startActivity(checkIntent);
             }
         });
+
     }
 
 

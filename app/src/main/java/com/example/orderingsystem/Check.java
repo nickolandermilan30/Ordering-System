@@ -2,16 +2,24 @@ package com.example.orderingsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Check extends AppCompatActivity {
 
@@ -28,6 +36,13 @@ public class Check extends AppCompatActivity {
         ImageButton b2 = findViewById(R.id.b2);
         ImageButton b3 = findViewById(R.id.b3);
         ImageButton b4 = findViewById(R.id.b4);
+
+        // Retrieve data from intent
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        double totalBill = intent.getDoubleExtra("totalBill", 0.0);
+        // Assuming you have a ListView in your layout with the id listView
+        ListView listView = findViewById(R.id.listView);
 
         searchAutoCompleteTextView = findViewById(R.id.searchAutoCompleteTextView);
 
@@ -55,6 +70,48 @@ public class Check extends AppCompatActivity {
 
         searchAutoCompleteTextView.setAdapter(adapter);
 
+        // Sa iyong Check.java
+        List<OrderItem> checkDataList = new ArrayList<>();
+        checkDataList.add(new OrderItem(name, totalBill));
+
+        ArrayAdapter<OrderItem> checkDataAdapter = new ArrayAdapter<OrderItem>
+                (this, R.layout.list_item_bill, R.id.itemNameTextView, checkDataList) {
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                // Check if the view is being reused, otherwise inflate the view
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_bill, parent, false);
+                }
+
+                // Get the data item for this position
+                OrderItem orderItem = getItem(position);
+
+                // Lookup view for data population
+                TextView itemNameTextView = convertView.findViewById(R.id.itemNameTextView);
+                TextView itemTotalBillTextView = convertView.findViewById(R.id.itemTotalBillTextView);
+
+                // Populate the data into the template view using the data object
+                if (orderItem != null) {
+                    itemNameTextView.setText(orderItem.getName());
+
+                    // Convert total bill to PHP currency format
+                    double totalBill = orderItem.getTotalBill();
+                    NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("fil", "PH"));
+                    String formattedTotalBill = currencyFormat.format(totalBill);
+                    itemTotalBillTextView.setText(formattedTotalBill);
+                }
+
+                // Return the completed view to render on screen
+                return convertView;
+            }
+        };
+
+// Set the adapter to the ListView
+        listView.setAdapter(checkDataAdapter);
+
+
+
 
         searchAutoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -64,7 +121,6 @@ public class Check extends AppCompatActivity {
                 switchToMatchingActivity(selectedFood);
             }
         });
-
 
         // Set click listeners for the ImageButtons
         b1.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +149,8 @@ public class Check extends AppCompatActivity {
 
 
     }
+
+
 
     private void switchToMatchingActivity(String foodName) {
         Intent intent;

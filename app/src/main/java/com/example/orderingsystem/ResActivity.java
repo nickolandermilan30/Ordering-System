@@ -3,11 +3,13 @@ package com.example.orderingsystem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -24,22 +26,8 @@ public class ResActivity extends AppCompatActivity {
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Retrieve data passed from Fav activity
-                Bundle extras = getIntent().getExtras();
-                if (extras != null) {
-                    String name = extras.getString("name");
-                    int tableNumber = extras.getInt("tableNumber");
-                    ArrayList<FoodItem> itemList = extras.getParcelableArrayList("itemList");
-                    double totalBill = extras.getDouble("totalBill");
-
-                    // Start the CheckActivity and pass the necessary data
-                    Intent intent = new Intent(ResActivity.this, Check.class);
-                    intent.putExtra("name", name);
-                    intent.putExtra("tableNumber", tableNumber);
-                    intent.putParcelableArrayListExtra("itemList", itemList);
-                    intent.putExtra("totalBill", totalBill);
-                    startActivity(intent);
-                }
+                // Show a custom dialogue
+                showCustomDialogue();
             }
         });
 
@@ -54,6 +42,39 @@ public class ResActivity extends AppCompatActivity {
             // Update UI with the retrieved data
             updateUI(name, tableNumber, itemList, totalBill);
         }
+    }
+
+    private void showCustomDialogue() {
+        // Inflate the custom layout
+        View dialogView = getLayoutInflater().inflate(R.layout.custom_dialog_layout, null);
+
+        // Initialize views from the custom layout
+        TextView dialogTitle = dialogView.findViewById(R.id.dialogTitle);
+        TextView dialogMessage = dialogView.findViewById(R.id.dialogMessage);
+        Button okButton = dialogView.findViewById(R.id.okButton);
+
+        // Set title and message
+        dialogTitle.setText("Thank You for Ordering!");
+        dialogMessage.setText("Your order has been received. We appreciate your business.");
+
+        // Build the custom dialogue
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(dialogView);
+
+        // Create and show the dialogue
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        // Set click listener for the OK button
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Close the dialogue
+                dialog.dismiss();
+                Intent checkIntent = new Intent(ResActivity.this, Check.class);
+                startActivity(checkIntent);
+            }
+        });
     }
 
 

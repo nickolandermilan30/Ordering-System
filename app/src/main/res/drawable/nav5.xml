@@ -10,21 +10,13 @@
                 android:topRightRadius="1000dp"
                 android:topLeftRadius="1000dp" />
             <stroke
-                android:width="4dp"
-                android:color="@color/white"
-                />
-
+                android:width="2dp"
+                android:color="@color/white_dark" />
             <!-- Change stroke color here -->
         </shape>
     </item>
 
-    <!-- Image with Color Filter -->
-    <item
-        android:drawable="@drawable/round_arrow"
-        android:left="10dp"
-        android:top="10dp"
-        android:right="10dp"
-        android:bottom="10dp"/>
+    <!-- Image with Color Filter and Rotation -->
 
 
 </layer-list>

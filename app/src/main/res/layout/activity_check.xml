@@ -6,6 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".Check">
 
+
+    <View
+        android:id="@+id/view24"
+        android:layout_width="310dp"
+        android:layout_height="53dp"
+        android:background="@drawable/nav5"
+        app:layout_constraintBottom_toTopOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.028" />
+
+    <AutoCompleteTextView
+        android:id="@+id/searchAutoCompleteTextView"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="7dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/balsamiq_sans"
+        android:hint="Search"
+        app:layout_constraintBottom_toBottomOf="@+id/view24"
+        app:layout_constraintEnd_toEndOf="@+id/view24"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/view24"
+        app:layout_constraintTop_toTopOf="@+id/view24"
+        app:layout_constraintVertical_bias="1.0" />
+
     <View
         android:id="@+id/view5"
         android:layout_width="421dp"
@@ -77,16 +105,6 @@
         app:layout_constraintTop_toTopOf="@+id/view5"
         app:layout_constraintVertical_bias="0.431" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="369dp"
-        android:layout_height="557dp"
-        app:layout_constraintBottom_toTopOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811" />
-
     <TextView
         android:id="@+id/noItemsTextView"
         android:layout_width="141dp"
@@ -109,13 +127,14 @@
         android:layout_height="49dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
-        android:text="Table Order"
+        android:text="More"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/listViewOrders"
+        app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

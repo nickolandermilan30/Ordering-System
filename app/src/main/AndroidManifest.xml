@@ -13,6 +13,18 @@
         android:theme="@style/Theme.OrderingSystem"
         tools:targetApi="31">
         <activity
+            android:name=".OrderList5"
+            android:exported="false" />
+        <activity
+            android:name=".OrderList4"
+            android:exported="false" />
+        <activity
+            android:name=".OrderList3"
+            android:exported="false" />
+        <activity
+            android:name=".OrderList2"
+            android:exported="false" />
+        <activity
             android:name=".OrderList"
             android:exported="false" />
         <activity

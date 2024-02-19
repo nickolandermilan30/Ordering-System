@@ -1,12 +1,20 @@
 package com.example.orderingsystem;
 
 public class SliderItems {
-    //set to String, if you want to add image url from internet
+
     private int image;
-    SliderItems(int image) {
+    private String text;
+
+    SliderItems(int image, String text) {
         this.image = image;
+        this.text = text;
     }
+
     public int getImage() {
         return image;
+    }
+
+    public String getText() {
+        return text;
     }
 }

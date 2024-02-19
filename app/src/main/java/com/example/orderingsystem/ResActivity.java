@@ -82,9 +82,7 @@ public class ResActivity extends AppCompatActivity {
                 startActivity(checkIntent);
             }
         });
-
     }
-
 
     private void updateUI(String name, int tableNumber, ArrayList<FoodItem> itemList, double totalBill) {
         TextView nameTextView = findViewById(R.id.nameTextView);

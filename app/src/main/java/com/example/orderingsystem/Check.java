@@ -2,29 +2,28 @@ package com.example.orderingsystem;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.os.Handler;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Check extends AppCompatActivity {
 
     private AutoCompleteTextView searchAutoCompleteTextView;
-
+    private ViewPager2 viewPager2;
+    private Handler sliderHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +35,46 @@ public class Check extends AppCompatActivity {
         ImageButton b2 = findViewById(R.id.b2);
         ImageButton b3 = findViewById(R.id.b3);
         ImageButton b4 = findViewById(R.id.b4);
-
-        // Retrieve data from intent
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        double totalBill = intent.getDoubleExtra("totalBill", 0.0);
-        // Assuming you have a ListView in your layout with the id listView
-        ListView listView = findViewById(R.id.listView);
-
         searchAutoCompleteTextView = findViewById(R.id.searchAutoCompleteTextView);
 
-        List<String> foodSuggestions = new ArrayList<>();
+        viewPager2 = findViewById(R.id.viewPagerImageSlider);
+
+        List<SliderItems> sliderItems = new ArrayList<>();
+        sliderItems.add(new SliderItems(R.drawable.fuhua));
+        sliderItems.add(new SliderItems(R.drawable.navia));
+        sliderItems.add(new SliderItems(R.drawable.mei));
+        sliderItems.add(new SliderItems(R.drawable.march));
+
+        viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2));
+
+        viewPager2.setClipToPadding(false);
+        viewPager2.setClipChildren(false);
+        viewPager2.setOffscreenPageLimit(3);
+        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
+        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float r = 1 - Math.abs(position);
+                page.setScaleY(0.85f + r * 0.15f);
+            }
+        });
+        viewPager2.setPageTransformer(compositePageTransformer);
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable, 2000); // slide duration 2 seconds
+            }
+        });
+
+
+
+    List<String> foodSuggestions = new ArrayList<>();
         foodSuggestions.add("Tianshu Meat");
         foodSuggestions.add("Sashimi Platter");
 
@@ -69,49 +97,6 @@ public class Check extends AppCompatActivity {
                 android.R.layout.simple_dropdown_item_1line, foodSuggestions);
 
         searchAutoCompleteTextView.setAdapter(adapter);
-
-        // Sa iyong Check.java
-        List<OrderItem> checkDataList = new ArrayList<>();
-        checkDataList.add(new OrderItem(name, totalBill));
-
-        ArrayAdapter<OrderItem> checkDataAdapter = new ArrayAdapter<OrderItem>
-                (this, R.layout.list_item_bill, R.id.itemNameTextView, checkDataList) {
-            @NonNull
-            @Override
-            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                // Check if the view is being reused, otherwise inflate the view
-                if (convertView == null) {
-                    convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_bill, parent, false);
-                }
-
-                // Get the data item for this position
-                OrderItem orderItem = getItem(position);
-
-                // Lookup view for data population
-                TextView itemNameTextView = convertView.findViewById(R.id.itemNameTextView);
-                TextView itemTotalBillTextView = convertView.findViewById(R.id.itemTotalBillTextView);
-
-                // Populate the data into the template view using the data object
-                if (orderItem != null) {
-                    itemNameTextView.setText(orderItem.getName());
-
-                    // Convert total bill to PHP currency format
-                    double totalBill = orderItem.getTotalBill();
-                    NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("fil", "PH"));
-                    String formattedTotalBill = currencyFormat.format(totalBill);
-                    itemTotalBillTextView.setText(formattedTotalBill);
-                }
-
-                // Return the completed view to render on screen
-                return convertView;
-            }
-        };
-
-// Set the adapter to the ListView
-        listView.setAdapter(checkDataAdapter);
-
-
-
 
         searchAutoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -146,11 +131,20 @@ public class Check extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sliderHandler.removeCallbacks(sliderRunnable);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sliderHandler.postDelayed(sliderRunnable, 2000);
+    }
 
     private void switchToMatchingActivity(String foodName) {
         Intent intent;
@@ -188,6 +182,14 @@ public class Check extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private Runnable sliderRunnable = new Runnable() {
+        @Override
+        public void run() {
+            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
+        }
+    };
+
 
 
 }
+

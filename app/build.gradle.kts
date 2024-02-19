@@ -33,6 +33,9 @@ android {
 
 dependencies {
 
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("com.makeramen:roundedimageview:2.3.0")
+
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation ("com.google.code.gson:gson:2.8.9")

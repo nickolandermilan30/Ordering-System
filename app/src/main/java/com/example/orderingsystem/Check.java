@@ -107,11 +107,11 @@ public class Check extends AppCompatActivity {
             }
         });
 
-        ImageButton Most = findViewById(R.id.most);
+        ImageButton History = findViewById(R.id.history);
 
 
         // Set click listeners for the ImageButtons
-        Most.setOnClickListener(new View.OnClickListener() {
+        History.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Check.this, MostPopularActivity.class);

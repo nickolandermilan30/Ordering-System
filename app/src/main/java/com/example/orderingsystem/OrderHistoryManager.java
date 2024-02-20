@@ -65,4 +65,17 @@ public class OrderHistoryManager {
 
         orderHistoryList = new ArrayList<>(orderHistorySet);
     }
-}
+
+    public static void deleteOrderDetails(Context context, String orderDetails) {
+        if (orderHistoryList != null) {
+            orderHistoryList.remove(orderDetails);
+
+            // Save the updated order history to SharedPreferences
+            saveOrderHistory(context);
+
+            if (adapter != null) {
+                adapter.notifyDataSetChanged();
+            }
+        }
+    }}
+

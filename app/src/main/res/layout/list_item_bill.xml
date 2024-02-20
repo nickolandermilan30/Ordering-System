@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:padding="8dp">
 
 
     <View
@@ -20,8 +20,8 @@
 
 
     <TextView
-        android:id="@+id/itemNameTextView"
-        android:layout_width="240dp"
+        android:id="@+id/orderDetailsTextView"
+        android:layout_width="192dp"
         android:layout_height="24dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
@@ -37,9 +37,9 @@
         app:layout_constraintVertical_bias="0.297" />
 
     <TextView
-        android:id="@+id/itemTotalBillTextView"
-        android:layout_width="238dp"
-        android:layout_height="33dp"
+        android:id="@+id/totalBillTextView"
+        android:layout_width="192dp"
+        android:layout_height="25dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
         android:text="********"
@@ -48,9 +48,9 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/view11"
         app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/itemNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/orderDetailsTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view11"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/itemNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/orderDetailsTextView"
         app:layout_constraintVertical_bias="0.45" />
 
     <View

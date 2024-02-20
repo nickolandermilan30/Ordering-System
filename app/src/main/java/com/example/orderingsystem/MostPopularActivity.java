@@ -15,8 +15,8 @@ public class MostPopularActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
 
-        // Initialize the adapter and manager
-        OrderHistoryManager.initializeAdapter(listView);
+        // Initialize the adapter and manager (pass application context)
+        OrderHistoryManager.initializeAdapter(getApplicationContext(), listView);
 
         // Get data from intent
         Intent intent = getIntent();
@@ -24,6 +24,6 @@ public class MostPopularActivity extends AppCompatActivity {
         double totalBill = intent.getDoubleExtra("totalBill", 0.0);
 
         // Add the order details using the manager
-        OrderHistoryManager.addOrderDetails(name, totalBill);
+        OrderHistoryManager.addOrderDetails(getApplicationContext(), name, totalBill);
     }
 }

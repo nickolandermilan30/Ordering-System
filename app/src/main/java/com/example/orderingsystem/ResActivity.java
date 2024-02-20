@@ -75,13 +75,14 @@ public class ResActivity extends AppCompatActivity {
                 // Close the dialogue
                 dialog.dismiss();
 
-                // Pass data to Check activity
-                Intent checkIntent = new Intent(ResActivity.this, Check.class);
-                checkIntent.putExtra("name", name);
-                checkIntent.putExtra("totalBill", totalBill);
-                startActivity(checkIntent);
+                // Pass data to MostPopularActivity
+                Intent mostPopularIntent = new Intent(ResActivity.this, MostPopularActivity.class);
+                mostPopularIntent.putExtra("name", name);
+                mostPopularIntent.putExtra("totalBill", totalBill);
+                startActivity(mostPopularIntent);
             }
         });
+
     }
 
     private void updateUI(String name, int tableNumber, ArrayList<FoodItem> itemList, double totalBill) {

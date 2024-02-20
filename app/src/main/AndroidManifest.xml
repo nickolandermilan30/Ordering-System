@@ -13,12 +13,18 @@
         android:theme="@style/Theme.OrderingSystem"
         tools:targetApi="31">
         <activity
+            android:name=".MostPopularActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResActivity"
             android:exported="false" />
         <activity
             android:name=".Check"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Dessert"
             android:exported="false" />

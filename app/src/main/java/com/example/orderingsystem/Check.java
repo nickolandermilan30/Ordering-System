@@ -102,8 +102,20 @@ public class Check extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedFood = (String) parent.getItemAtPosition(position);
-                // Ito ay halimbawa lamang. Dapat mong palitan ito base sa iyong pangangailangan.
+
                 switchToMatchingActivity(selectedFood);
+            }
+        });
+
+        ImageButton Most = findViewById(R.id.most);
+
+
+        // Set click listeners for the ImageButtons
+        Most.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Check.this, MostPopularActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -1,0 +1,64 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Rounded Rectangle Shape -->
+
+
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Set the fill color of the shape (background) to white -->
+            <solid android:color="#1F1F1F" />
+
+            <!-- Set the corner radius for rounded corners -->
+            <corners
+                android:bottomRightRadius="30dp"
+                android:bottomLeftRadius="30dp"
+                android:topRightRadius="30dp"
+                android:topLeftRadius="30dp" />
+
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Set the fill color of the shape (background) to white -->
+            <solid android:color="#FFFFFF" />
+
+            <!-- Set the corner radius for rounded corners -->
+            <corners
+                android:bottomRightRadius="30dp"
+                android:bottomLeftRadius="1000dp"
+                android:topRightRadius="1000dp"
+                android:topLeftRadius="30dp" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Set the fill color of the shape (background) to white -->
+            <solid android:color="#FFFFFF" />
+
+            <!-- Set the corner radius for rounded corners -->
+            <corners
+                android:bottomRightRadius="1000dp"
+                android:bottomLeftRadius="30dp"
+                android:topRightRadius="30dp"
+                android:topLeftRadius="1000dp" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#3D3C42" />
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/f4"
+        android:left="50dp"
+        android:top="50dp"
+        android:right="50dp"
+        android:bottom="50dp"/>
+
+
+
+
+</layer-list>

@@ -11,7 +11,7 @@
                 android:topLeftRadius="1000dp" />
             <stroke
                 android:width="2dp"
-                android:color="@color/white_dark" />
+                android:color="@color/white" />
             <!-- Change stroke color here -->
         </shape>
     </item>

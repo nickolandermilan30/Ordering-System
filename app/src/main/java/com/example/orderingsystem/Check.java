@@ -108,6 +108,7 @@ public class Check extends AppCompatActivity {
         });
 
         ImageButton History = findViewById(R.id.history);
+        ImageButton Review = findViewById(R.id.most);
 
 
         // Set click listeners for the ImageButtons
@@ -115,6 +116,13 @@ public class Check extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Check.this, MostPopularActivity.class);
+                startActivity(intent);
+            }
+        });
+        Review.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Check.this, FoodList.class);
                 startActivity(intent);
             }
         });

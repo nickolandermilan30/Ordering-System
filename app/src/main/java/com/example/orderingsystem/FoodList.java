@@ -1,10 +1,14 @@
 package com.example.orderingsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,5 +54,48 @@ public class FoodList extends AppCompatActivity {
         // Create a custom adapter
         CustomListAdapter adapter = new CustomListAdapter(this, foodItemList);
         listView.setAdapter(adapter);
+
+        // Set item click listener for the ListView
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item
+                FoodItemReview selectedItem = foodItemList.get(position);
+
+                // Create an Intent to start the ReviewActivity
+                Intent intent = new Intent(FoodList.this, ReviewActivity.class);
+
+                // Pass relevant data to the ReviewActivity
+                intent.putExtra("itemName", selectedItem.getName());
+                intent.putExtra("itemPrice", selectedItem.getPrice());
+                intent.putExtra("itemImage", selectedItem.getImageResourceId());
+                // Add more data if needed
+
+                // Pass different texts for each item
+                String[] additionalTexts = {
+                        "Ibang teksto para sa item 1",
+                        "Ibang teksto para sa item 2",
+                        "Ibang teksto para sa item 3",
+                        "Ibang teksto para sa item 4",
+                        "Ibang teksto para sa item 5",
+                        "Ibang teksto para sa item 6",
+                        "Ibang teksto para sa item 7",
+                        "Ibang teksto para sa item 8",
+                        "Ibang teksto para sa item 9",
+                        "Ibang teksto para sa item 10",
+                        "Ibang teksto para sa item 11",
+                        "Ibang teksto para sa item 12",
+                        "Ibang teksto para sa item 13",
+                        "Ibang teksto para sa item 14",
+
+                };
+                intent.putExtra("additionalText", additionalTexts[position]);
+
+
+                // Start the ReviewActivity
+                startActivity(intent);
+            }
+        });
+
     }
 }

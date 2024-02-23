@@ -5,12 +5,12 @@
         <shape android:shape="rectangle">
             <solid android:color="@color/white" /> <!-- Change color here -->
             <corners
-                android:bottomRightRadius="100dp"
-                android:bottomLeftRadius="100dp"
-                android:topRightRadius="100dp"
-                android:topLeftRadius="100dp" />
+                android:bottomRightRadius="30dp"
+                android:bottomLeftRadius="30dp"
+                android:topRightRadius="30dp"
+                android:topLeftRadius="30dp" />
             <stroke
-                android:width="2dp"
+                android:width="10dp"
                 android:color="@color/purple"
                 />
 
@@ -20,11 +20,11 @@
 
     <!-- Image with Color Filter -->
     <item
-        android:drawable="@drawable/hart"
-        android:left="10dp"
-        android:top="10dp"
-        android:right="10dp"
-        android:bottom="10dp"/>
+        android:drawable="@drawable/rai"
+        android:left="5dp"
+        android:top="5dp"
+        android:right="5dp"
+        android:bottom="5dp"/>
 
 
 </layer-list>

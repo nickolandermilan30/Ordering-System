@@ -9,8 +9,8 @@
 
     <ImageButton
         android:id="@+id/last"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/sqbtn1"
         app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toStartOf="@+id/most"
@@ -22,8 +22,8 @@
 
     <ImageButton
         android:id="@+id/most"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/sqbtn2"
         app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,8 +60,8 @@
 
     <ImageButton
         android:id="@+id/history"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/sqbtn3"
         app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"

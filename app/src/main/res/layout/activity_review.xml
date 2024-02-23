@@ -57,6 +57,7 @@
         android:background="@drawable/nav7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -75,7 +76,7 @@
     <TextView
         android:id="@+id/textView20"
         android:layout_width="193dp"
-        android:layout_height="39dp"
+        android:layout_height="30dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
         android:text="Name"
@@ -88,40 +89,40 @@
         app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view26"
-        app:layout_constraintVertical_bias="0.124" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <TextView
         android:id="@+id/billTextView"
-        android:layout_width="156dp"
-        android:layout_height="45dp"
+        android:layout_width="160dp"
+        android:layout_height="27dp"
         android:fontFamily="@font/balsamiq_sans"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:text="Bill"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView20"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.073" />
 
     <TextView
         android:id="@+id/additionalTextView"
-        android:layout_width="309dp"
-        android:layout_height="128dp"
+        android:layout_width="81dp"
+        android:layout_height="21dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
         android:textAlignment="textStart"
         android:textColor="@color/black"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view26"
-        app:layout_constraintEnd_toEndOf="@+id/view26"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/view26"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toEndOf="@+id/view28"
         app:layout_constraintTop_toBottomOf="@+id/billTextView"
-        app:layout_constraintVertical_bias="0.615" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <View
         android:id="@+id/view27"
@@ -133,7 +134,7 @@
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/textView19"
@@ -151,7 +152,7 @@
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toEndOf="@+id/view27"
         app:layout_constraintTop_toBottomOf="@+id/billTextView"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.136" />
 
     <TextView
         android:id="@+id/textView"
@@ -169,7 +170,7 @@
         app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toEndOf="@+id/view27"
         app:layout_constraintTop_toTopOf="@+id/view26"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.422" />
 
     <View
         android:layout_width="20dp"
@@ -180,7 +181,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/view27"
         app:layout_constraintTop_toBottomOf="@+id/textView19"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintVertical_bias="0.003" />
 
     <ImageButton
         android:id="@+id/start"
@@ -189,10 +190,10 @@
         android:background="@drawable/sqbtn7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/image"
-        app:layout_constraintVertical_bias="0.364" />
+        app:layout_constraintVertical_bias="0.272" />
 
     <TextView
         android:id="@+id/visit"
@@ -211,8 +212,8 @@
         app:layout_constraintTop_toTopOf="@+id/start" />
 
     <ImageButton
-        android:layout_width="33dp"
-        android:layout_height="33dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:background="@drawable/sqbtn8"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
@@ -228,10 +229,9 @@
         android:background="@drawable/nav8"
         app:layout_constraintBottom_toBottomOf="@+id/view26"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/additionalTextView"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toTopOf="@+id/view26"
+        app:layout_constraintVertical_bias="0.96" />
 
     <TextView
         android:id="@+id/message"
@@ -249,5 +249,103 @@
         app:layout_constraintStart_toStartOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="@+id/imageButton2" />
 
+    <View
+        android:id="@+id/view28"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/star"
+        app:layout_constraintBottom_toTopOf="@+id/view27"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/billTextView"
+        app:layout_constraintVertical_bias="0.363" />
 
+    <ImageView
+        android:id="@+id/imageResources"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.156" />
+
+    <TextView
+        android:id="@+id/additionalTextView2"
+        android:layout_width="81dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/balsamiq_sans"
+        android:gravity="center"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toEndOf="@+id/imageResources"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.128" />
+
+    <View
+        android:id="@+id/view29"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/dot"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintStart_toEndOf="@+id/imageResources"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.798" />
+
+    <TextView
+        android:id="@+id/additionalTextView3"
+        android:layout_width="84dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/balsamiq_sans"
+        android:gravity="center"
+        android:textAlignment="textStart"
+        android:textColor="#7A7A7A"
+        android:textSize="11dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/view29"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
+
+    <ScrollView
+        android:layout_width="283dp"
+        android:layout_height="76dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.359"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view26"
+        app:layout_constraintVertical_bias="0.942">
+
+        <TextView
+            android:id="@+id/additionalTextView4"
+            android:layout_width="283dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/balsamiq_sans"
+            android:gravity="center"
+            android:textAlignment="textStart"
+            android:textColor="#7A7A7A"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.411"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view26"
+            app:layout_constraintVertical_bias="0.916" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

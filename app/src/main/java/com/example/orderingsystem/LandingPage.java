@@ -3,6 +3,7 @@ package com.example.orderingsystem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -23,8 +24,29 @@ public class LandingPage extends AppCompatActivity {
         ImageButton b3 = findViewById(R.id.b3);
         ImageButton b4 = findViewById(R.id.b4);
 
+        ImageButton arrow1 = findViewById(R.id.imageButton4);
+        ImageButton arrow2 = findViewById(R.id.imageButton5);
+
+        arrow1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // When b2 is clicked, open the ShopActivity
+                Intent intent = new Intent(LandingPage.this, FoodList.class);
+                startActivity(intent);
+            }
+        });
+
+        arrow2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // When b2 is clicked, open the ShopActivity
+                Intent intent = new Intent(LandingPage.this, FoodList.class);
+                startActivity(intent);
+            }
+        });
+
         //Food
-        ImageButton addFavButton1 = findViewById(R.id.addfav);
+        Button addFavButton1 = findViewById(R.id.seller);
         ImageButton addFavButton2 = findViewById(R.id.addfav2);
         ImageButton addFavButton3 = findViewById(R.id.addfav3);
 

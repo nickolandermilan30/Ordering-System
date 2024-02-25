@@ -8,6 +8,7 @@
     tools:context=".ReviewActivity">
 
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="135dp"
@@ -112,6 +113,8 @@
         android:id="@+id/additionalTextView"
         android:layout_width="81dp"
         android:layout_height="21dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
         android:textAlignment="textStart"
@@ -119,7 +122,7 @@
         android:textSize="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toEndOf="@+id/view28"
         app:layout_constraintTop_toBottomOf="@+id/billTextView"
         app:layout_constraintVertical_bias="0.318" />
@@ -212,6 +215,7 @@
         app:layout_constraintTop_toTopOf="@+id/start" />
 
     <ImageButton
+        android:id="@+id/hart"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/sqbtn8"
@@ -235,11 +239,11 @@
 
     <TextView
         android:id="@+id/message"
-        android:layout_width="77dp"
+        android:layout_width="130dp"
         android:layout_height="20dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
-        android:text="Message "
+        android:text="View to menu"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="15dp"
@@ -259,7 +263,7 @@
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/billTextView"
-        app:layout_constraintVertical_bias="0.363" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <ImageView
         android:id="@+id/imageResources"
@@ -348,4 +352,22 @@
             app:layout_constraintTop_toTopOf="@+id/view26"
             app:layout_constraintVertical_bias="0.916" />
     </ScrollView>
+
+    <TextView
+        android:id="@+id/hartCountTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:fontFamily="@font/balsamiq_sans"
+        android:gravity="center"
+        android:text="0"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/view27"
+        app:layout_constraintEnd_toStartOf="@+id/additionalTextView"
+        app:layout_constraintStart_toEndOf="@+id/view28"
+        app:layout_constraintTop_toBottomOf="@+id/billTextView"
+        app:layout_constraintVertical_bias="0.333" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

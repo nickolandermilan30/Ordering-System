@@ -1,6 +1,7 @@
 package com.example.orderingsystem;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ReviewActivity extends AppCompatActivity {
+    private int hartCount = 0;
+    private static final String HART_COUNT_KEY = "hart_count";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +25,29 @@ public class ReviewActivity extends AppCompatActivity {
         ImageButton Check = findViewById(R.id.home);
         ImageButton Start = findViewById(R.id.start);
         ImageButton Message = findViewById(R.id.imageButton2);
+        ImageButton hart = findViewById(R.id.hart);
+        // Restore hart count from SharedPreferences
+        hartCount = getHartCountFromSharedPreferences();
 
+        hart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Increment the hart count
+                hartCount++;
+
+                // Save the updated count to SharedPreferences
+                saveHartCountToSharedPreferences(hartCount);
+
+                // Update the TextView with the new count
+                updateHartCountTextView();
+            }
+        });
+        
         Message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // When Message button is clicked, go to Message activity
-                Intent intent = new Intent(ReviewActivity.this, Message.class);
+                Intent intent = new Intent(ReviewActivity.this, Shop.class);
                 startActivity(intent);
             }
         });
@@ -92,7 +113,29 @@ public class ReviewActivity extends AppCompatActivity {
 
         // Set image resource
         imageResourcesImageView.setImageResource(imageResources);
+
+        // Update the TextView with the restored count
+        updateHartCountTextView();
+    }
+
+    private int getHartCountFromSharedPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        return sharedPreferences.getInt("hartCount", 0); // 0 is the default value if count not found
+    }
+
+    private void saveHartCountToSharedPreferences(int count) {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("hartCount", count);
+        editor.apply();
     }
 
 
+    private void updateHartCountTextView() {
+        TextView hartCountTextView = findViewById(R.id.hartCountTextView);
+        hartCountTextView.setText(String.valueOf(hartCount));
+    }
+    
+    
+    
 }

@@ -33,6 +33,33 @@ public class Shop extends AppCompatActivity {
 
         Button Drinks = findViewById(R.id.drinks);
         Button Dessert = findViewById(R.id.dessert);
+
+        // Sa loob ng onCreate method
+        View.OnClickListener buyButtonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Dito mo maaaring ilagay ang logic na nais mong gawin kapag pinindot ang alinman sa Buy button
+                Intent intent = new Intent(Shop.this, FoodList.class);
+                // Maaari mong idagdag ang anumang mga parameter o data sa loob ng Intent bago pumunta sa target activity
+                startActivity(intent);
+            }
+        };
+
+// Sa loob ng onCreate method, pagkatapos mo makuha ang mga ImageButton
+        ImageButton Buy1 = findViewById(R.id.buy1);
+        ImageButton Buy2 = findViewById(R.id.buy2);
+        ImageButton Buy3 = findViewById(R.id.buy3);
+        ImageButton Buy4 = findViewById(R.id.buy5);
+
+// I-set ang OnClickListener para sa bawat ImageButton
+        Buy1.setOnClickListener(buyButtonClickListener);
+        Buy2.setOnClickListener(buyButtonClickListener);
+        Buy3.setOnClickListener(buyButtonClickListener);
+        Buy4.setOnClickListener(buyButtonClickListener);
+
+
+
+
         Dessert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

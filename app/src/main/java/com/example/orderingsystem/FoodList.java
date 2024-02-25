@@ -72,20 +72,20 @@ public class FoodList extends AppCompatActivity {
 
                 // Pass different texts for each item
                 String[] additionalTexts = {
-                        "2.8 | 179 sold",
-                        "4.3 | 46 sold",
-                        "1.2 | 19 sold",
-                        "2.6 | 99 sold",
-                        "3.4 | 190 sold",
-                        "5.6 | 109 sold",
-                        "1.1 | 155 sold",
-                        "3.3 | 189 sold",
-                        "9.8 | 155 sold",
-                        "1.3 | 197 sold",
-                        "3.8 | 209 sold",
-                        "9.0 | 777 sold",
-                        "2.2 | 899 sold",
-                        "5.5 | 156 sold"
+                        "| 179 sold",
+                        "| 46 sold",
+                        "| 19 sold",
+                        "| 99 sold",
+                        "| 190 sold",
+                        "| 109 sold",
+                        "| 155 sold",
+                        "| 189 sold",
+                        "| 155 sold",
+                        "| 197 sold",
+                        "| 209 sold",
+                        "| 777 sold",
+                        "| 899 sold",
+                        "| 156 sold"
                 };
                 intent.putExtra("additionalText", additionalTexts[position]);
 

@@ -40,10 +40,10 @@ public class Check extends AppCompatActivity {
         viewPager2 = findViewById(R.id.viewPagerImageSlider);
 
         List<SliderItems> sliderItems = new ArrayList<>();
-        sliderItems.add(new SliderItems(R.drawable.f5, "1k"));
-        sliderItems.add(new SliderItems(R.drawable.d1, "5k"));
-        sliderItems.add(new SliderItems(R.drawable.d5, "6k"));
-        sliderItems.add(new SliderItems(R.drawable.f6, "10k"));
+        sliderItems.add(new SliderItems(R.drawable.g1, "1k"));
+        sliderItems.add(new SliderItems(R.drawable.g2, "5k"));
+        sliderItems.add(new SliderItems(R.drawable.g3, "6k"));
+        sliderItems.add(new SliderItems(R.drawable.g4, "10k"));
 
         viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2));
 

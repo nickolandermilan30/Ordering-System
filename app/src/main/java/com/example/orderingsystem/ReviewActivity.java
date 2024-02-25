@@ -20,6 +20,17 @@ public class ReviewActivity extends AppCompatActivity {
         ImageButton backButton = findViewById(R.id.back);
         ImageButton Check = findViewById(R.id.home);
         ImageButton Start = findViewById(R.id.start);
+        ImageButton Message = findViewById(R.id.imageButton2);
+
+        Message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // When Message button is clicked, go to Message activity
+                Intent intent = new Intent(ReviewActivity.this, Message.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Set a click listener for the "Back" button
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -82,4 +93,6 @@ public class ReviewActivity extends AppCompatActivity {
         // Set image resource
         imageResourcesImageView.setImageResource(imageResources);
     }
+
+
 }

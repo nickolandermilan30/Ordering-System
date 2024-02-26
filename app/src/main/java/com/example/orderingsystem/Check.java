@@ -72,7 +72,15 @@ public class Check extends AppCompatActivity {
             }
         });
 
-
+        ImageButton lastButton = findViewById(R.id.last);
+        lastButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Kapag pinindot ang last button, pupunta sa GaleryActivity
+                Intent intent = new Intent(Check.this, GaleryActivity.class);
+                startActivity(intent);
+            }
+        });
 
     List<String> foodSuggestions = new ArrayList<>();
         foodSuggestions.add("Tianshu Meat");

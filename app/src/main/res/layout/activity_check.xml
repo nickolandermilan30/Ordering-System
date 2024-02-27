@@ -8,67 +8,28 @@
 
 
     <ImageButton
-        android:id="@+id/last"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/sqbtn1"
-        app:layout_constraintBottom_toTopOf="@+id/view5"
-        app:layout_constraintEnd_toStartOf="@+id/most"
-        app:layout_constraintHorizontal_bias="0.812"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view25"
-        app:layout_constraintVertical_bias="0.105" />
-
-
-    <ImageButton
         android:id="@+id/most"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:background="@drawable/sqbtn2"
         app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.299"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view25"
-        app:layout_constraintVertical_bias="0.105" />
-
-    <ImageButton
-        android:id="@+id/about"
-        android:layout_width="210dp"
-        android:layout_height="47dp"
-        android:background="@drawable/button12"
-        app:layout_constraintBottom_toTopOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view25"
-        app:layout_constraintVertical_bias="0.651" />
-
-    <TextView
-        android:layout_width="137dp"
-        android:layout_height="47dp"
-        android:fontFamily="@font/balsamiq_sans"
-        android:gravity="center"
-        android:text="About This App"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/about"
-        app:layout_constraintEnd_toEndOf="@+id/about"
-        app:layout_constraintStart_toStartOf="@+id/about"
-        app:layout_constraintTop_toTopOf="@+id/about" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <ImageButton
         android:id="@+id/history"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:background="@drawable/sqbtn3"
         app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.343"
         app:layout_constraintStart_toEndOf="@+id/most"
         app:layout_constraintTop_toBottomOf="@+id/view25"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <View
         android:id="@+id/view25"
@@ -236,50 +197,33 @@
         android:text="History"
         android:textAlignment="center"
         android:textColor="@color/white_dark"
-        android:textSize="10dp"
+        android:textSize="13dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/about"
+        app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/history"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.136" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="48dp"
         android:layout_height="21dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/balsamiq_sans"
         android:gravity="center"
         android:text="Review"
         android:textAlignment="center"
         android:textColor="@color/white_dark"
-        android:textSize="10dp"
+        android:textSize="13dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/about"
+        app:layout_constraintBottom_toTopOf="@+id/view5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.314"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/most"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:layout_width="48dp"
-        android:layout_height="21dp"
-        android:fontFamily="@font/balsamiq_sans"
-        android:gravity="center"
-        android:text="Freebies"
-        android:textAlignment="center"
-        android:textColor="@color/white_dark"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/about"
-        app:layout_constraintEnd_toStartOf="@+id/textView19"
-        app:layout_constraintHorizontal_bias="0.813"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/last"
-        app:layout_constraintVertical_bias="0.0" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
